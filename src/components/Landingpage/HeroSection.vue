@@ -49,23 +49,7 @@ import PageMargin from '@/components/PageMargin.vue'
         </button>
       </div>
 
-      <!-- Stats row -->
-      <div class="font-sans flex items-center bg-card/75 border border-border rounded-2xl px-9 py-5 backdrop-blur-xl shadow-[0_4px_24px_color-mix(in_oklch,var(--color-foreground)_8%,transparent)] animate-[fadeSlideUp_0.8s_0.5s_ease_both]">
-        <div class="flex flex-col items-center gap-0.5 px-7">
-          <span class="text-[1.6rem] font-bold text-foreground tracking-[-0.02em]">500+</span>
-          <span class="text-[0.78rem] text-muted-foreground uppercase tracking-[0.08em]">Schools</span>
-        </div>
-        <div class="w-px h-10 bg-border"></div>
-        <div class="flex flex-col items-center gap-0.5 px-7">
-          <span class="text-[1.6rem] font-bold text-foreground tracking-[-0.02em]">120K+</span>
-          <span class="text-[0.78rem] text-muted-foreground uppercase tracking-[0.08em]">Students</span>
-        </div>
-        <div class="w-px h-10 bg-border"></div>
-        <div class="flex flex-col items-center gap-0.5 px-7">
-          <span class="text-[1.6rem] font-bold text-foreground tracking-[-0.02em]">99.9%</span>
-          <span class="text-[0.78rem] text-muted-foreground uppercase tracking-[0.08em]">Uptime</span>
-        </div>
-      </div>
+    
 
     </PageMargin>
 s
