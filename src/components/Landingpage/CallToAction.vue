@@ -4,9 +4,13 @@ import { Icon } from '@iconify/vue';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GridOverlay from '../GridOverlay.vue';
+import RequestDemoModal from './RequestDemoModal.vue'
+
 gsap.registerPlugin(ScrollTrigger);
 
 const ctaRef = ref<HTMLElement | null>(null);
+const isDemoModalOpen = ref(false)
+
 
 onMounted(() => {
   if (ctaRef.value) {
@@ -50,13 +54,16 @@ onMounted(() => {
       
       <!-- Actions -->
       <div class="cta-anim flex flex-col sm:flex-row items-center justify-center gap-3 pt-4 w-full sm:w-auto">
-        <button class="w-full sm:w-auto bg-black text-white hover:opacity-85 text-sm font-medium px-6 py-2.5 rounded-full transition-opacity flex items-center justify-center space-x-2">
-          <span>Get started</span>
-          <Icon icon="ph:arrow-right-bold" class="w-4 h-4" />
-        </button>
-        <button class="w-full sm:w-auto bg-white border border-slate-200 text-slate-800 hover:bg-slate-50 text-sm font-medium px-6 py-2.5 rounded-full transition-colors flex items-center justify-center space-x-2">
+        <RouterLink to="/signup">
+          <button class="w-full sm:w-auto bg-black text-white hover:opacity-85 text-sm font-medium cursor-pointer px-6 py-2.5 rounded-full transition-opacity flex items-center justify-center space-x-2">
+            <span>Get started</span>
+            <Icon icon="ph:arrow-right-bold" class="w-4 h-4" />
+          </button>
+        </RouterLink>
+        <button @click="isDemoModalOpen = true" class="w-full sm:w-auto bg-white border border-slate-200 cursor-pointer text-slate-800 hover:bg-slate-50 text-sm font-medium px-6 py-2.5 rounded-full transition-colors flex items-center justify-center space-x-2">
           <span>Book a demo</span>
         </button>
+        <RequestDemoModal v-model:isOpen="isDemoModalOpen" />
       </div>
 
     </div>

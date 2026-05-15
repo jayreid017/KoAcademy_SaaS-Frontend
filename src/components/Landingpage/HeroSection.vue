@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import GridOverlay from '@/components/GridOverlay.vue'
 import PageMargin from '@/components/PageMargin.vue'
+import RequestDemoModal from './RequestDemoModal.vue'
+import { ref } from 'vue'
+
+const isDemoModalOpen = ref(false)
 </script>
 
 <template>
@@ -34,25 +38,28 @@ import PageMargin from '@/components/PageMargin.vue'
 
       <!-- CTA Buttons -->
       <div class="flex flex-wrap gap-4 mt-2">
+        <RouterLink to="/signup">
         <button class="font-sans inline-flex items-center gap-2 px-[30px] py-[14px] rounded-xl text-[0.95rem] font-semibold bg-black text-white cursor-pointer shadow-[0_4px_20px_color-mix(in_oklch,var(--color-primary)_35%,transparent)] transition-[transform,box-shadow] duration-200 animate-[fadeSlideDown_0.7s_0.3s_ease_both] hover:-translate-y-0.5 hover:shadow-[0_8px_28px_color-mix(in_oklch,var(--color-primary)_45%,transparent)] active:translate-y-0">
           Get Started Free
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </button>
-        <button class="font-sans inline-flex items-center gap-2 px-[30px] py-[14px] rounded-xl text-[0.95rem] font-semibold bg-card/80 text-foreground border border-border/50 cursor-pointer backdrop-blur-md shadow-[0_2px_12px_color-mix(in_oklch,var(--color-primary)_10%,transparent)] transition-[transform,box-shadow,background-color] duration-200 animate-[fadeSlideDown_0.7s_0.35s_ease_both] hover:-translate-y-0.5 hover:bg-card hover:shadow-[0_6px_20px_color-mix(in_oklch,var(--color-primary)_18%,transparent)]">
-          Watch Demo
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10" />
-            <polygon points="10 8 16 12 10 16 10 8" />
-          </svg>
+        </RouterLink>
+        <button @click="isDemoModalOpen = true" class="font-sans inline-flex items-center gap-2 px-[30px] py-[14px] rounded-xl text-[0.95rem] font-semibold bg-card/80 text-foreground border border-border/50 cursor-pointer backdrop-blur-md shadow-[0_2px_12px_color-mix(in_oklch,var(--color-primary)_10%,transparent)] transition-[transform,box-shadow,background-color] duration-200 animate-[fadeSlideDown_0.7s_0.35s_ease_both] hover:-translate-y-0.5 hover:bg-card hover:shadow-[0_6px_20px_color-mix(in_oklch,var(--color-primary)_18%,transparent)]">
+           Request Demo
+           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path fill="currentColor" d="M13 18V9H4V8h10v10zm4-3.98v-9H8v-1h10v10z" />
+            </svg>
+
         </button>
       </div>
 
     
 
     </PageMargin>
-s
+    <RequestDemoModal v-model:isOpen="isDemoModalOpen" />
   </section>
  
 </template>

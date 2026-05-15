@@ -107,32 +107,33 @@ onUnmounted(() => {
         <div class="hidden sm:flex items-center gap-2">
           <div class="w-px h-5 bg-slate-200"></div>
 
-          <a
-            href="#"
-            class="text-sm font-medium text-slate-800 px-4 py-1.5 rounded-2xl border border-slate-200 hover:bg-slate-50 transition-colors"
-          >
-            Sign in
-          </a>
+          <RouterLink to="/signin">
+            <button
+              class="cursor-pointer text-sm font-medium text-slate-800 px-4 py-1.5 rounded-2xl border border-slate-200 hover:bg-slate-50 transition-colors"
+            >
+              Sign in
+            </button>
+          </RouterLink>
 
-          <a
-            href="#cta"
-            @click.prevent="scrollTo('cta')"
-            class="text-sm font-medium text-white px-4 py-1.5 rounded-2xl bg-black hover:opacity-85 transition-opacity whitespace-nowrap"
-          >
+          <RouterLink to="/signup">
+            <button
+              class="cursor-pointer text-sm font-medium text-white px-4 py-1.5 rounded-2xl bg-black hover:opacity-85 transition-opacity whitespace-nowrap"
+            >
             Get started
-          </a>
+          </button>
+          </RouterLink>
         </div>
 
         <!-- Mobile Right Side -->
         <div class="flex sm:hidden items-center gap-2">
           <!-- CTA -->
-          <a
-            href="#cta"
-            @click.prevent="scrollTo('cta')"
-            class="text-sm font-medium text-white px-4 py-1.5 rounded-2xl bg-black hover:opacity-85 transition-opacity whitespace-nowrap"
-          >
+          <RouterLink to="/signup">
+            <button
+              class="cursor-pointer text-sm font-medium text-white px-4 py-1.5 rounded-2xl bg-black hover:opacity-85 transition-opacity whitespace-nowrap"
+            >
             Get started
-          </a>
+          </button>
+          </RouterLink>
 
           <!-- Hamburger -->
           <button
